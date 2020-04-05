@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/maorroizmangheiler/Documents/UTEC 2020-1/Estructura de Algoritmos ( Teoría )/cs2100-sorting-mrg2000/Sorting.h
+iostream
+-
+vector
+/Users/maorroizmangheiler/Documents/UTEC 2020-1/Estructura de Algoritmos ( Teoría )/cs2100-sorting-mrg2000/vector
+
+/Users/maorroizmangheiler/Documents/UTEC 2020-1/Estructura de Algoritmos ( Teoría )/cs2100-sorting-mrg2000/main.cpp
+iostream
+-
+Sorting.h
+/Users/maorroizmangheiler/Documents/UTEC 2020-1/Estructura de Algoritmos ( Teoría )/cs2100-sorting-mrg2000/Sorting.h
+vector
+/Users/maorroizmangheiler/Documents/UTEC 2020-1/Estructura de Algoritmos ( Teoría )/cs2100-sorting-mrg2000/vector
+
