@@ -9,7 +9,7 @@ int main() {
 
     Sorting vector(vec);
 
-    vector.InsertSort();
+    vector.SelectionSort();
     vector.PrintVector();
 
 
