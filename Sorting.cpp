@@ -73,3 +73,74 @@ void Sorting::BubbleSort(){
                 Intercambio(vecOrdenado[j], vecOrdenado[j+1]);
 
 }
+
+
+
+void SubRutinaMerge(vector<int> &vec, int l, int m, int r) {
+
+        int i, j, k;
+        int n1 = m - l + 1;
+        int n2 =  r - m;
+
+        /* create temp arrays */
+        int L[n1], R[n2];
+
+        /* Copy data to temp arrays L[] and R[] */
+        for (i = 0; i < n1; i++)
+            L[i] = vec[l + i];
+        for (j = 0; j < n2; j++)
+            R[j] = vec[m + 1+ j];
+
+        /* Merge the temp arrays back into arr[l..r]*/
+        i = 0; // Initial index of first subarray
+        j = 0; // Initial index of second subarray
+        k = l; // Initial index of merged subarray
+        while (i < n1 && j < n2)
+        {
+            if (L[i] <= R[j])
+            {
+                vec[k] = L[i];
+                i++;
+            }
+            else
+            {
+                vec[k] = R[j];
+                j++;
+            }
+            k++;
+        }
+
+        /* Copy the remaining elements of L[], if there
+           are any */
+        while (i < n1)
+        {
+            vec[k] = L[i];
+            i++;
+            k++;
+        }
+
+        /* Copy the remaining elements of R[], if there
+           are any */
+        while (j < n2)
+        {
+            vec[k] = R[j];
+            j++;
+            k++;
+        }
+
+}
+
+
+void Sorting::MergeSort(int left, int right) {
+
+    if (left < right) {
+        int m = left+(right-left)/2;
+
+        MergeSort(left, m);
+        MergeSort(m+1, right);
+
+        SubRutinaMerge(vecOrdenado, left, m, right);
+    }
+}
+
+

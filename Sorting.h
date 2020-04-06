@@ -30,6 +30,8 @@ public:
 
     void BubbleSort();
 
+    void MergeSort(int left, int right);
+
 
 
 
