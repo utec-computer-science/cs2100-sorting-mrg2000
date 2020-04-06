@@ -11,6 +11,7 @@ Sorting::Sorting(vector<int> vector){
 
     vecDesordenado = vector;
 
+    vecOrdenado = vecDesordenado;
 
 }
 
@@ -26,8 +27,6 @@ void Sorting::PrintVector(){
 
 void Sorting::InsertSort(){
 
-    vecOrdenado = vecDesordenado;
-
     for(int i=1; i<vecOrdenado.size(); i++){
         int key = vecOrdenado[i];
         int j= i-1;
@@ -37,6 +36,28 @@ void Sorting::InsertSort(){
             j=j-1;
         }
         vecOrdenado[j+1] = key;
+    }
+
+}
+
+
+void Intercambio(int &vec1, int &vec2){
+    int var;
+    var = vec1;
+    vec1 = vec2;
+    vec2 = var;
+}
+
+
+void Sorting::SelectionSort(){
+
+    int i, j, imin;
+    for(i = 0; i<vectorSize-1; i++) {
+        imin = i;
+        for(j = i+1; j<vectorSize; j++)
+            if(vecOrdenado[j] < vecOrdenado[imin])
+                imin = j;
+        Intercambio(vecOrdenado[i], vecOrdenado[imin]);
     }
 
 }

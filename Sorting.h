@@ -26,7 +26,7 @@ public:
 
     void InsertSort();
 
-
+    void SelectionSort();
 
 
 
