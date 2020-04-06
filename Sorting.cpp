@@ -61,3 +61,15 @@ void Sorting::SelectionSort(){
     }
 
 }
+
+
+void Sorting::BubbleSort(){
+
+    int i, j;
+    for (i = 0; i < vectorSize-1; i++)
+
+        for (j = 0; j < vectorSize-i-1; j++)
+            if (vecOrdenado[j] > vecOrdenado[j+1])
+                Intercambio(vecOrdenado[j], vecOrdenado[j+1]);
+
+}
