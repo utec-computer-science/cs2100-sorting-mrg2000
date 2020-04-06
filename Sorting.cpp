@@ -73,3 +73,70 @@ void Sorting::BubbleSort(){
                 Intercambio(vecOrdenado[j], vecOrdenado[j+1]);
 
 }
+
+
+
+void SubRutinaMerge(vector<int> &vec, int l, int m, int r) {
+
+        int i, j, k;
+        int n1 = m - l + 1;
+        int n2 =  r - m;
+
+
+        int L[n1], R[n2];
+
+        for (i = 0; i < n1; i++)
+            L[i] = vec[l + i];
+        for (j = 0; j < n2; j++)
+            R[j] = vec[m + 1+ j];
+
+        i = 0;
+        j = 0;
+        k = l;
+        while (i < n1 && j < n2)
+        {
+            if (L[i] <= R[j])
+            {
+                vec[k] = L[i];
+                i++;
+            }
+            else
+            {
+                vec[k] = R[j];
+                j++;
+            }
+            k++;
+        }
+
+
+        while (i < n1)
+        {
+            vec[k] = L[i];
+            i++;
+            k++;
+        }
+
+
+        while (j < n2)
+        {
+            vec[k] = R[j];
+            j++;
+            k++;
+        }
+
+}
+
+
+void Sorting::MergeSort(int left, int right) {
+
+    if (left < right) {
+        int m = left+(right-left)/2;
+
+        MergeSort(left, m);
+        MergeSort(m+1, right);
+
+        SubRutinaMerge(vecOrdenado, left, m, right);
+    }
+}
+
+
