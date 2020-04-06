@@ -41,13 +41,6 @@ void Sorting::InsertSort(){
 }
 
 
-void Intercambio(int &vec1, int &vec2){
-    int var;
-    var = vec1;
-    vec1 = vec2;
-    vec2 = var;
-}
-
 
 void Sorting::SelectionSort(){
 
@@ -57,7 +50,7 @@ void Sorting::SelectionSort(){
         for(j = i+1; j<vectorSize; j++)
             if(vecOrdenado[j] < vecOrdenado[imin])
                 imin = j;
-        Intercambio(vecOrdenado[i], vecOrdenado[imin]);
+        swap(vecOrdenado[i], vecOrdenado[imin]);
     }
 
 }
@@ -70,7 +63,7 @@ void Sorting::BubbleSort(){
 
         for (j = 0; j < vectorSize-i-1; j++)
             if (vecOrdenado[j] > vecOrdenado[j+1])
-                Intercambio(vecOrdenado[j], vecOrdenado[j+1]);
+                swap(vecOrdenado[j], vecOrdenado[j+1]);
 
 }
 
@@ -162,12 +155,46 @@ void heapify(vector<int>& arr, int n, int i)
 
 void Sorting::HeapSort(){
 
-    for (int i = vectorSize / 2 - 1; i >= 0; i--)
-        heapify(vecOrdenado, vectorSize, i);
+    int size = (unsigned int)vectorSize;
 
-    for (int i=vectorSize-1; i>0; i--) {
+    for (int i = size / 2 - 1; i >= 0; i--)
+        heapify(vecOrdenado, size, i);
+
+    for (int i=size-1; i>0; i--) {
         swap(vecOrdenado[0], vecOrdenado[i]);
         heapify(vecOrdenado, i, 0);
     }
+
+}
+
+
+int partition (vector<int>& vec, int low, int high)
+{
+    int pivot = vec[high];
+    int i = (low - 1);
+
+    for (int j = low; j <= high - 1; j++) {
+        if (vec[j] < pivot)
+        {
+            i++; // increment index of smaller element
+            swap(vec[i], vec[j]);
+        }
+    }
+    swap(vec[i + 1], vec[high]);
+    return (i + 1);
+}
+
+
+
+
+void Sorting::QuickSort(int low, int high){
+    if (low < high) {
+
+        int partitionIndex = partition(vecOrdenado, low, high);
+
+        QuickSort(low, partitionIndex - 1);
+        QuickSort(partitionIndex + 1, high);
+    }
+
 
 }

@@ -34,6 +34,8 @@ public:
 
     void HeapSort();
 
+    void QuickSort(int low, int high);
+
 
 
 
