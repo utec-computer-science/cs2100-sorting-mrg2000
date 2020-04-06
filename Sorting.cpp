@@ -82,19 +82,17 @@ void SubRutinaMerge(vector<int> &vec, int l, int m, int r) {
         int n1 = m - l + 1;
         int n2 =  r - m;
 
-        /* create temp arrays */
+
         int L[n1], R[n2];
 
-        /* Copy data to temp arrays L[] and R[] */
         for (i = 0; i < n1; i++)
             L[i] = vec[l + i];
         for (j = 0; j < n2; j++)
             R[j] = vec[m + 1+ j];
 
-        /* Merge the temp arrays back into arr[l..r]*/
-        i = 0; // Initial index of first subarray
-        j = 0; // Initial index of second subarray
-        k = l; // Initial index of merged subarray
+        i = 0;
+        j = 0;
+        k = l;
         while (i < n1 && j < n2)
         {
             if (L[i] <= R[j])
@@ -110,8 +108,7 @@ void SubRutinaMerge(vector<int> &vec, int l, int m, int r) {
             k++;
         }
 
-        /* Copy the remaining elements of L[], if there
-           are any */
+
         while (i < n1)
         {
             vec[k] = L[i];
@@ -119,8 +116,7 @@ void SubRutinaMerge(vector<int> &vec, int l, int m, int r) {
             k++;
         }
 
-        /* Copy the remaining elements of R[], if there
-           are any */
+
         while (j < n2)
         {
             vec[k] = R[j];
