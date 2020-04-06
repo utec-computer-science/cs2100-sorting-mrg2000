@@ -28,6 +28,8 @@ public:
 
     void SelectionSort();
 
+    void BubbleSort();
+
 
 
 

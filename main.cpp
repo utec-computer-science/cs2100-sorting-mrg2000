@@ -5,11 +5,11 @@
 
 int main() {
 
-    vector<int> vec = {10,11,12,13,9,7,5};
+    vector<int> vec = {0,1,5,4,3,7,10};
 
     Sorting vector(vec);
 
-    vector.SelectionSort();
+    vector.BubbleSort();
     vector.PrintVector();
 
 
