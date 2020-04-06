@@ -140,3 +140,34 @@ void Sorting::MergeSort(int left, int right) {
 }
 
 
+
+void heapify(vector<int>& arr, int n, int i)
+{
+    int max = i;
+    int l = 2*i + 1;
+    int r = 2*i + 2;
+
+    if (l < n && arr[l] > arr[max])
+        max = l;
+
+    if (r < n && arr[r] > arr[max])
+        max = r;
+
+    if (max != i) {
+        swap(arr[i], arr[max]);
+        heapify(arr, n, max);
+    }
+}
+
+
+void Sorting::HeapSort(){
+
+    for (int i = vectorSize / 2 - 1; i >= 0; i--)
+        heapify(vecOrdenado, vectorSize, i);
+
+    for (int i=vectorSize-1; i>0; i--) {
+        swap(vecOrdenado[0], vecOrdenado[i]);
+        heapify(vecOrdenado, i, 0);
+    }
+
+}
