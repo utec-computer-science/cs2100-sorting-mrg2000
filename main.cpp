@@ -7,7 +7,7 @@
 int main() {
 
 
-    vector<int> vec = {0,1,5,4,3,7,10,9};
+    vector<int> vec = {2,0,1,5,4,3,7,10,9};
     Sorting vector(vec);
 
     /*
@@ -41,6 +41,12 @@ int main() {
     vector.PrintVector();
     */
 
+
+    /*
+    // Heap Sort
+    vector.HeapSort();
+    vector.PrintVector();
+    */
 
 
 

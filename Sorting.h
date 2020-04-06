@@ -32,7 +32,7 @@ public:
 
     void MergeSort(int left, int right);
 
-
+    void HeapSort();
 
 
 
