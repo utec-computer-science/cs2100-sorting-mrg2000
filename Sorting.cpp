@@ -176,7 +176,7 @@ int partition (vector<int>& vec, int low, int high)
     for (int j = low; j <= high - 1; j++) {
         if (vec[j] < pivot)
         {
-            i++; // increment index of smaller element
+            i++;
             swap(vec[i], vec[j]);
         }
     }
@@ -196,5 +196,26 @@ void Sorting::QuickSort(int low, int high){
         QuickSort(partitionIndex + 1, high);
     }
 
+
+}
+
+
+void Sorting::ShellSort(){
+
+    int size = (unsigned int) vectorSize;
+
+    for (int gap = size/2; gap > 0; gap /= 2) {
+
+        for (int i = gap; i < size; i += 1) {
+
+            int varTemporal = vecOrdenado[i];
+
+            int j;
+            for (j = i; j >= gap && vecOrdenado[j - gap] > varTemporal; j -= gap)
+                vecOrdenado[j] = vecOrdenado[j - gap];
+
+            vecOrdenado[j] = varTemporal;
+        }
+    }
 
 }
