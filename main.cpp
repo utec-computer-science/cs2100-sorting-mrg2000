@@ -7,7 +7,7 @@
 int main() {
 
 
-    vector<int> vec = {2,0,1,5,4,3,7,10,9};
+    vector<int> vec = {2,0,1,5,4,3,7,10,9,20};
     Sorting vector(vec);
 
     /*
@@ -29,7 +29,7 @@ int main() {
     //BubbleSort
     vector.BubbleSort();
     vector.PrintVector();
-     */
+    */
 
     /*
     //MergeSort
@@ -43,12 +43,19 @@ int main() {
 
 
     /*
-    // Heap Sort
+    // HeapSort
     vector.HeapSort();
     vector.PrintVector();
     */
 
 
+    /*
+    //QuickSort
+    int low = 0;
+    int high= (unsigned int)vec.size()-1;
+    vector.QuickSort(low,high);
+    vector.PrintVector();
+    */
 
 
 return 0;
